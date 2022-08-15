@@ -1,8 +1,8 @@
 var currentDay = moment().format("LLLL");
 var currentDayEl = $("#currentDay");
-var calendarTableEl = $("#calendarTable");
+// var calendarTableEl = $("#calendarTable");
 currentDayEl.text(currentDay);
-console.log(currentDay);
+// console.log(currentDay);
 var save = "Save";
 
 var currentHour = moment().hours();
@@ -15,6 +15,11 @@ function timeCompare() {
     var hourBlock = $(this).attr("id");
     if (hourBlock < currentHour) {
       $(this).addClass("past");
+    }
+    if (hourBlock == currentHour) {
+      $(this).addClass("present");
+    } else if (hourBlock > currentHour) {
+      $(this).addClass("future");
     }
   });
 }
@@ -73,7 +78,6 @@ function saveClicked() {
     3. How do I add the input to time slots?
 */
 
-/*Todo -- need 1 hour block of all hour blocks 
-time functions need if else statements for present and future 
-Make sure save function works 
+/*Todo -- Make sure save function works 
+make sure buttons in correct spot and everything saves with button click 
 */
